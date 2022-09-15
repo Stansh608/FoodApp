@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/home"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_orders"
+            android:icon="@android:drawable/ic_menu_agenda"
+            android:title="Active Food Orders" />
+        <item
+            android:id="@+id/nav_porders"
+            android:icon="@android:drawable/ic_menu_month"
+            android:title="Processed Food Orders" />
+        <item
+            android:id="@+id/nav_notification"
+            android:icon="@android:drawable/stat_notify_chat"
+            android:title="Notifications" />
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/user"
+            android:title="Profile" />
+        <item
+            android:id="@+id/nav_cpass"
+            android:icon="@android:drawable/ic_lock_idle_lock"
+            android:title="Change Password" />
+        <item
+            android:id="@+id/nav_setting"
+            android:icon="@android:drawable/ic_menu_preferences"
+            android:title="Settings" />
+    </group>
+</menu>

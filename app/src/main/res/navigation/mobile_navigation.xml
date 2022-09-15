@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.foodapp.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_porders"
+        android:name="com.example.foodapp.ui.porders.GalleryFragment"
+        android:label="Pending Meal Orders"
+        tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/nav_notification"
+        android:name="com.example.foodapp.ui.notifications.SlideshowFragment"
+        android:label="Notifications"
+        tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/nav_cpass"
+        android:name="com.example.foodapp.ui.resetpass.ResetPassword"
+        android:label="@string/menu_resetpass"
+        tools:layout="@layout/fragment_reset_password" />
+    <fragment
+        android:id="@+id/nav_orders"
+        android:name="com.example.foodapp.ui.activeorders.ActiveOdersFragment"
+        android:label="Active Orders"
+        tools:layout="@layout/fragment_active_oders" />
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.example.foodapp.ui.profile.ProfileFragment"
+        android:label="User Profile"
+        tools:layout="@layout/fragment_profile" />
+</navigation>

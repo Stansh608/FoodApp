@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/STANSH/AndroidStudioProjects/FoodApp2/app/src/main/res/drawable-v24/ic_black_color_back_24dp.xml" value="0.2125" />
+        <entry key="..\:/Users/STANSH/AndroidStudioProjects/FoodApp2/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2165" />
+        <entry key="..\:/Users/STANSH/AndroidStudioProjects/FoodApp2/app/src/main/res/drawable/home_banner.xml" value="0.2155" />
+        <entry key="..\:/Users/STANSH/AndroidStudioProjects/FoodApp2/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2165" />
+        <entry key="..\:/Users/STANSH/AndroidStudioProjects/FoodApp2/app/src/main/res/drawable/ic_menu_slideshow.xml" value="0.1" />
+        <entry key="..\:/Users/STANSH/AndroidStudioProjects/FoodApp2/app/src/main/res/drawable/search_button.xml" value="0.2145" />
+        <entry key="..\:/Users/STANSH/AndroidStudioProjects/FoodApp2/app/src/main/res/drawable/side_nav_bar.xml" value="0.2165" />
+        <entry key="..\:/Users/STANSH/AndroidStudioProjects/FoodApp2/app/src/main/res/layout/activity_dash_board.xml" value="0.209375" />
+        <entry key="..\:/Users/STANSH/AndroidStudioProjects/FoodApp2/app/src/main/res/layout/activity_forgot_password.xml" value="0.1" />
+        <entry key="..\:/Users/STANSH/AndroidStudioProjects/FoodApp2/app/src/main/res/layout/activity_home.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/STANSH/AndroidStudioProjects/FoodApp2/app/src/main/res/layout/activity_homepage.xml" value="0.1" />
+        <entry key="..\:/Users/STANSH/AndroidStudioProjects/FoodApp2/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/STANSH/AndroidStudioProjects/FoodApp2/app/src/main/res/layout/activity_reset_password.xml" value="0.1" />
+        <entry key="..\:/Users/STANSH/AndroidStudioProjects/FoodApp2/app/src/main/res/layout/activity_sign_up.xml" value="0.10280797101449275" />
+        <entry key="..\:/Users/STANSH/AndroidStudioProjects/FoodApp2/app/src/main/res/layout/activity_view_food.xml" value="0.209375" />
+        <entry key="..\:/Users/STANSH/AndroidStudioProjects/FoodApp2/app/src/main/res/layout/app_bar_homepage.xml" value="0.1" />
+        <entry key="..\:/Users/STANSH/AndroidStudioProjects/FoodApp2/app/src/main/res/layout/content_homepage.xml" value="0.1" />
+        <entry key="..\:/Users/STANSH/AndroidStudioProjects/FoodApp2/app/src/main/res/layout/fragment_active_oders.xml" value="0.209375" />
+        <entry key="..\:/Users/STANSH/AndroidStudioProjects/FoodApp2/app/src/main/res/layout/fragment_gallery.xml" value="0.17255434782608695" />
+        <entry key="..\:/Users/STANSH/AndroidStudioProjects/FoodApp2/app/src/main/res/layout/fragment_home.xml" value="0.1" />
+        <entry key="..\:/Users/STANSH/AndroidStudioProjects/FoodApp2/app/src/main/res/layout/fragment_reset_password.xml" value="0.1" />
+        <entry key="..\:/Users/STANSH/AndroidStudioProjects/FoodApp2/app/src/main/res/layout/fragment_slideshow.xml" value="0.11731843575418995" />
+        <entry key="..\:/Users/STANSH/AndroidStudioProjects/FoodApp2/app/src/main/res/layout/item_list.xml" value="0.25" />
+        <entry key="..\:/Users/STANSH/AndroidStudioProjects/FoodApp2/app/src/main/res/layout/nav_header_homepage.xml" value="0.1" />
+        <entry key="..\:/Users/STANSH/AndroidStudioProjects/FoodApp2/app/src/main/res/menu/activity_main_drawer.xml" value="0.1" />
+        <entry key="..\:/Users/STANSH/AndroidStudioProjects/FoodApp2/app/src/main/res/menu/homepage.xml" value="0.1" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

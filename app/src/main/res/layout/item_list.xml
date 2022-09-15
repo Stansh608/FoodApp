@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<data>
+    <variable
+        name="isFoods"
+        type="com.example.foodapp.model.FoodData" />
+</data>
+
+    <androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+        android:background="#F1F1EB"
+        android:backgroundTint="@null"
+        app:cardCornerRadius="8dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#A9FFFFFF"
+
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_margin="10dp"
+            android:padding="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        <ImageView
+            android:imageUrl="@{isFoods.img}"
+            android:layout_width="100dp"
+            android:scaleType="centerCrop"
+            android:id="@+id/foodImg"
+            android:layout_height="140dp"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+
+            >
+            <TextView
+                android:id="@+id/foodName"
+                android:text="@{isFoods.name}"
+                android:layout_width="match_parent"
+                android:textColor="@color/ic_cart_background"
+                android:textStyle="bold|normal"
+                android:textSize="20sp"
+                android:layout_margin="10dp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/foodInfo"
+                android:text="@{isFoods.info}"
+                android:layout_width="match_parent"
+                android:textColor="@color/black"
+                android:textStyle="bold|normal"
+                android:textSize="15sp"
+                android:layout_margin="10dp"
+                android:layout_height="wrap_content"/>
+
+
+        </LinearLayout>
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:background="@color/ic_cart_background"/>
+
+    </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</layout>
+<!-- Now move on to create an Adapter Class -->
