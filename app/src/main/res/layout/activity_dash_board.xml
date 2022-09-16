@@ -4,11 +4,213 @@
     xmlns:tools="http://schemas.android.com/tools"
 
     >
+
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ui.home.HomeFragment">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:background="@color/orange"
+            android:backgroundTint="@null"
+            app:cardBackgroundColor="#FF5722"
+            app:cardCornerRadius="20dp"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="71dp"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="5dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.046"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.06"
+                    app:srcCompat="@drawable/coffeecup" />
+
+                <TextView
+                    android:id="@+id/txt_username"
+                    android:layout_width="111dp"
+                    android:layout_height="24dp"
+                    android:layout_marginBottom="96dp"
+                    android:paddingStart="11dp"
+                    android:text="TextView"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:textStyle="bold|normal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/imageView2" />
+
+                <ImageView
+                    android:id="@+id/img_profile"
+                    android:layout_width="65dp"
+                    android:layout_height="47dp"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.067"
+                    app:srcCompat="@drawable/cuptea" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="4dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="Your Profile"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/img_profile"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <LinearLayout
+                    android:layout_width="405dp"
+                    android:layout_height="57dp"
+                    android:orientation="horizontal"
+                    android:paddingStart="30dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="1.0">
+
+                    <FrameLayout
+                        android:layout_width="70dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="70dp"
+
+                        android:radius="70dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            >
+
+                            <ImageView
+                                android:layout_width="match_parent"
+
+                                android:layout_height="25dp"
+                                android:layout_gravity="center"
+
+                                android:src="@drawable/ricebean"
+                                android:textAlignment="center"
+                                android:layout_marginBottom="10dp"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="20dp"
+                                android:text="Active Orders"
+                                android:textColor="@color/white"
+                                android:textAlignment="center"
+                                android:textSize="10dp" />
+
+
+
+                        </LinearLayout>
+
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="60dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="90dp"
+
+                        android:radius="70dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            >
+
+                            <ImageView
+                                android:layout_width="match_parent"
+
+                                android:layout_height="25dp"
+                                android:layout_gravity="center"
+
+                                android:src="@drawable/ricebean"
+                                android:textAlignment="center"
+                                android:layout_marginBottom="10dp"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="20dp"
+                                android:text="My Orders"
+                                android:textColor="@color/white"
+                                android:textAlignment="center"
+                                android:textSize="10dp" />
+
+
+
+                        </LinearLayout>
+
+                    </FrameLayout>
+                    <FrameLayout
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="10dp"
+
+                        android:radius="70dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            >
+
+                            <ImageView
+                                android:layout_width="match_parent"
+
+                                android:layout_height="25dp"
+                                android:layout_gravity="center"
+
+                                android:src="@drawable/ricebean"
+                                android:textAlignment="center"
+                                android:layout_marginBottom="10dp"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="20dp"
+                                android:text="Reports"
+                                android:textColor="@color/white"
+                                android:textAlignment="center"
+                                android:textSize="10dp" />
+
+
+
+                        </LinearLayout>
+
+                    </FrameLayout>
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:textAlignment="center"
+            android:text="Order Food"
+            android:textStyle="bold|normal"
+            android:background="#EDF1F4"/>
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerFood"
             tools:listitem="@layout/item_list"
