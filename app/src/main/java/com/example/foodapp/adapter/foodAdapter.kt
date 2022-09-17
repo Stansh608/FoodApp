@@ -32,6 +32,10 @@ class foodAdapter (
         val img=newList.img
         val info=newList.info
         val name= newList.name
+        val details= newList.details
+        val price =newList.price
+        val count=newList.count
+
 
 
 
@@ -40,6 +44,9 @@ class foodAdapter (
             mIntent.putExtra("img",img)
             mIntent.putExtra("info",info)
             mIntent.putExtra("name",name)
+            mIntent.putExtra("details",details)
+            mIntent.putExtra("price",price)
+            mIntent.putExtra("count",count)
             c.startActivity(mIntent)
         }
 

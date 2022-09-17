@@ -15,9 +15,13 @@ class ViewFood : AppCompatActivity() {
         val foodname= foodIntent.getStringExtra("name")
         val foodimg= foodIntent.getStringExtra("img")
         val foodinfo= foodIntent.getStringExtra("info")
+        val foodDetail=foodIntent.getStringExtra("details")
+        val foodPrice = foodIntent.getStringExtra("price")
+        val foodCount = foodIntent.getStringExtra("count")
         //fill in
         txt_name.text=foodname
-        txt_info.text=foodinfo
+        txt_price.text = "Ksh "+foodPrice
+        txt_details.text=foodDetail
         img.loadImage(foodimg, getProgressDrawable(this))
 
 

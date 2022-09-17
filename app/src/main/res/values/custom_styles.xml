@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="circular_img">
+        <item name="cornerSize">5%</item>
+
+    </style>
+    <style name="circular_profile">
+        <item name="cornerSize">30%</item>
+
+    </style>
+    <style name="rounded_corner">
+        <item name="cornerRadius">100dp</item>
+    </style>
+    <style name="search_icon">
+        <item name="cornerSize">20%</item>
+    </style>
+</resources>
