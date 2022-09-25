@@ -26,27 +26,31 @@ class foodAdapter (
     }
 
     override fun onBindViewHolder(holder: foodViewHolder, position: Int) {
-        holder.v.isFoods = foodList[position]
+        holder.v.isFood = foodList[position]
         // get the data for view food
         val newList=foodList[position]
-        val img=newList.img
-        val info=newList.info
-        val name= newList.name
-        val details= newList.details
-        val price =newList.price
         val count=newList.count
+        val describe= newList.describe
+        val img=newList.img
+        val name= newList.name
+        val pstn= newList.id
+
+        val price =newList.price
 
 
 
 
-        holder.v.root.setOnClickListener{
+
+       holder.v.root.setOnClickListener{
             val mIntent = Intent(c, ViewFood::class.java)
-            mIntent.putExtra("img",img)
-            mIntent.putExtra("info",info)
-            mIntent.putExtra("name",name)
-            mIntent.putExtra("details",details)
-            mIntent.putExtra("price",price)
             mIntent.putExtra("count",count)
+            mIntent.putExtra("describe",describe)
+            mIntent.putExtra("img",img)
+           mIntent.putExtra("pstn",pstn)
+
+            mIntent.putExtra("name",name)
+            mIntent.putExtra("price",price)
+
             c.startActivity(mIntent)
         }
 

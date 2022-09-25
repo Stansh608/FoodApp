@@ -1,6 +1,7 @@
 package com.example.foodapp
 
 import android.app.ProgressDialog
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.widget.SearchView
@@ -12,8 +13,11 @@ import com.example.foodapp.adapter.foodAdapter
 import com.example.foodapp.databinding.ActivityDashBoardBinding
 import com.example.foodapp.model.FoodData
 import com.google.firebase.auth.FirebaseAuth
+
 import com.google.firebase.database.*
+import kotlinx.android.synthetic.main.activity_dash_board.*
 import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.fragment_home.recyclerFood
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -50,6 +54,10 @@ class DashBoard : AppCompatActivity() {
         // get food data from firebase
         getFoodData()
 
+        //onclick myorders
+        my_orders.setOnClickListener {
+            startActivity(Intent(this, Orders::class.java))
+        }
     }
 //Implementng the search icon
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -101,7 +109,7 @@ class DashBoard : AppCompatActivity() {
                     recyclerFood.adapter=mAdapter
                 }
                 //search icon item
-                newfoodList.addAll(foodList)
+                //newfoodList.addAll(foodList)
             }
 
 

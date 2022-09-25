@@ -22,12 +22,14 @@ import com.example.foodapp.databinding.ActivityHomepageBinding
 import com.example.foodapp.model.FoodData
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
-import com.google.firebase.database.ktx.database
+//import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
-import com.google.protobuf.Internal
+//import com.google.protobuf.Internal
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class Homepage : AppCompatActivity() {
+
+    /*
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityHomepageBinding
@@ -94,7 +96,7 @@ class Homepage : AppCompatActivity() {
 
     private fun getFoodData() {
         //database sync <firebase>
-        mDatabase=FirebaseDatabase.getInstance().getReference("foodItem")
+        mDatabase=FirebaseDatabase.getInstance().getReference("Food")
         mDatabase.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 //
@@ -142,4 +144,6 @@ class Homepage : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_homepage)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
+
+     */
 }

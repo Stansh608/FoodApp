@@ -77,9 +77,9 @@ class SignUp : AppCompatActivity() {
 // referencing to realtime database
             database = FirebaseDatabase.getInstance().getReference("register")
             //creating the users object
-            val User= Register(username, names,idno, phone, email, pass)
+            val Usr= Register(username, names,idno, phone, email, pass)
             //passing it to the realtime firebase db
-            database.child(username).setValue(User).addOnSuccessListener {
+            database.child(username).setValue(Usr).addOnSuccessListener {
                 // on success clear the edittexts
                 binding.etUsername.text?.clear()
                 binding.etNames.text?.clear()
