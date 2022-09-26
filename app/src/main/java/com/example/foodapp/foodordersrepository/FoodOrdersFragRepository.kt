@@ -8,7 +8,7 @@ import java.lang.Exception
 class FoodOrdersFragRepository {
 
     //create database reference
-    private val databaseReference: DatabaseReference= FirebaseDatabase.getInstance().getReference("orders")
+    private val databaseReference: DatabaseReference= FirebaseDatabase.getInstance().getReference("orders").child("stan")
 
     // ensure only a single instance of this class exists
     //only when null willanother instance be created

@@ -56,11 +56,12 @@
                 android:textStyle="bold|normal" />
             <TextView
                 android:id="@+id/foodInfo"
-                android:text="@{isFood.describe}"
+                android:text='@{isFood.count + " item(s) Left" }'
                 android:layout_width="match_parent"
                 android:textColor="@color/black"
                 android:textStyle="bold|normal"
                 android:textSize="15sp"
+                android:textAlignment="center"
                 android:layout_margin="10dp"
                 android:layout_height="wrap_content"/>
 
