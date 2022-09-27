@@ -1,5 +1,6 @@
 package com.example.foodapp
 
+import android.app.ProgressDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -17,6 +18,7 @@ class ViewFood : AppCompatActivity() {
     private lateinit var databaseReference:DatabaseReference
     private lateinit var databaseReference1:DatabaseReference
     private lateinit var databaseReference2:DatabaseReference
+    private lateinit var progressdialog:ProgressDialog
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_view_food)
@@ -39,6 +41,7 @@ class ViewFood : AppCompatActivity() {
         txt_counts.text=num.toString()
         btn_add.setOnClickListener {
 
+            //add the pieces
             if(num<foodCount!!.toInt()) {
                 num++
                 txt_counts.text = num.toString()
@@ -49,20 +52,28 @@ class ViewFood : AppCompatActivity() {
         }
         btn_minus.setOnClickListener {
 
+            //reduce the pieces
             if(num>1) {
                 num--
                 txt_counts.text = num.toString()
 
             }
         }
-        //create preference value
+
+//configure progressDialog
+        progressdialog= ProgressDialog(this)
+        progressdialog.setTitle("Please wait")
+        progressdialog.setMessage("Processing...")
+        progressdialog.setCanceledOnTouchOutside(false)
 
 
 
 
-
-
+        var username="stan"
         btn_order.setOnClickListener {
+
+            progressdialog.show()
+
             val myPreference = SharedReference(this)
             var ordercount= myPreference.getOrderCount()
             ordercount++
@@ -72,12 +83,10 @@ class ViewFood : AppCompatActivity() {
             var unitprice=foodPrice!!.toInt()
             var tprice=no*unitprice
             var totalprice=tprice.toString()
-            var username="stan"
+
             var items=txt_counts.text.toString()
             var left=foodCount!!.toInt() -no
             var the_key=ordercount.toString()
-
-
 
             databaseReference=FirebaseDatabase.getInstance().getReference("orders")
             val orders= MealOrder(username,foodimg, foodname,totalprice,items)
@@ -88,10 +97,12 @@ class ViewFood : AppCompatActivity() {
                     "count" to left.toString()
                 )
                 databaseReference1.child(pstn.toString()).updateChildren(left_Item)
-
+                progressdialog.dismiss()
                 Toast.makeText(this, "Order Placed Successfully", Toast.LENGTH_SHORT).show()
+
                 startActivity(Intent(this, Orders::class.java))
             }.addOnFailureListener {
+                progressdialog.dismiss()
                 Toast.makeText(this, "Order Failed", Toast.LENGTH_SHORT).show()
             }
 
