@@ -12,11 +12,14 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.foodapp.adapter.foodAdapter
 import com.example.foodapp.databinding.ActivityDashBoardBinding
 import com.example.foodapp.model.FoodData
+import com.example.foodapp.model.userName
+//import com.example.foodapp.model.userName
+
 import com.google.firebase.auth.FirebaseAuth
 
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_dash_board.*
-import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.activity_view_food.*
 import kotlinx.android.synthetic.main.fragment_home.recyclerFood
 import java.util.*
 import kotlin.collections.ArrayList
@@ -40,6 +43,17 @@ class DashBoard : AppCompatActivity() {
         binding= ActivityDashBoardBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        //open profile
+        binding.imgprofile.setOnClickListener {
+            startActivity(Intent(this, Profiles::class.java))
+        }
+
+        //username
+    val myPreference = userName(this)
+        var usern= myPreference.getUser()
+        txt_username.text="Logged in as: "+usern
+
+
         //implementing recyclerview
         //initializing
         foodList = ArrayList()
@@ -56,9 +70,11 @@ class DashBoard : AppCompatActivity() {
 
         //onclick myorders
         my_orders.setOnClickListener {
-            startActivity(Intent(this, Orders::class.java))
-        }
+            startActivity(Intent(this,Orders::class.java))
+                    }
     }
+
+
 //Implementng the search icon
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_item, menu)

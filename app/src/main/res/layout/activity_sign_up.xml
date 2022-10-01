@@ -8,21 +8,22 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_register_activity"
-        android:layout_width="418dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/ic_cart_background"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/ic_cart_background"
+            android:layout_height="wrap_content"
+
             android:backgroundTint="@null"
-            android:paddingLeft="0dp"
-            android:layout_marginRight="25dp"
+            android:paddingLeft="-5dp"
+            android:layout_marginLeft="0dp"
+
             android:text="CREATE AN ACCOUNT"
             android:textAlignment="center"
             android:textFontWeight="1000"
@@ -48,6 +49,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
+                android:background="@drawable/input"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -57,10 +59,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textCapCharacters"
-                    android:padding="25dp"
+                    android:padding="18dp"
+                    android:background="@drawable/input"
                     android:textColor="@color/black"
                     android:textSize="18dp"
-                    tools:text="null"/>
+                    tools:text="null"
+                    />
 
             </com.google.android.material.textfield.TextInputLayout>
             <com.google.android.material.textfield.TextInputLayout
@@ -69,6 +73,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
+                android:background="@drawable/input"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/til_username">
@@ -79,6 +84,7 @@
                     android:layout_height="wrap_content"
                     android:inputType="text"
                     android:padding="18dp"
+                    android:background="@drawable/input"
                     android:textColor="@color/black"
                     android:textSize="18dp"
                     tools:text="null"/>
@@ -101,6 +107,7 @@
                     android:layout_height="wrap_content"
                     android:inputType="text"
                     android:padding="18dp"
+                    android:background="@drawable/input"
                     android:textColor="@color/black"
                     android:textSize="18dp"
                     tools:text="null"/>
@@ -121,6 +128,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="phone"
+                    android:background="@drawable/input"
                     android:padding="18dp"
                     android:textColor="@color/black"
                     android:textSize="18dp"
@@ -144,6 +152,7 @@
                     android:layout_height="wrap_content"
                     android:inputType="phone"
                     android:padding="18dp"
+                    android:background="@drawable/input"
                     android:textColor="@color/black"
                     android:textSize="18dp"
                     tools:text="null"/>
@@ -165,6 +174,7 @@
                     android:layout_height="wrap_content"
                     android:inputType="textPassword"
                     android:padding="18dp"
+                    android:background="@drawable/input"
                     android:textColor="@color/black"
                     android:textSize="18dp"
                     tools:text="null"/>
@@ -182,6 +192,7 @@
 
                 <EditText
                     android:id="@+id/et_cpass"
+                    android:background="@drawable/input"
                     android:inputType="textPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -194,10 +205,11 @@
 
             <Button
                 android:id="@+id/btn_signup"
+                android:background="@drawable/button"
                 android:layout_width="396dp"
                 android:layout_height="65dp"
                 android:layout_marginTop="25dp"
-                android:background="@color/ic_cart_background"
+
                 android:text="SIGN UP"
                 android:textColor="@color/black"
                 android:textSize="20dp"

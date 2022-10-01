@@ -4,10 +4,13 @@ import android.app.ProgressDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.telephony.SmsManager
 import android.widget.Toast
 import com.example.foodapp.model.LeftItem
 import com.example.foodapp.model.MealOrder
 import com.example.foodapp.model.SharedReference
+import com.example.foodapp.model.userName
+//import com.example.foodapp.model.userName
 import com.example.foodapp.uitel.getProgressDrawable
 import com.example.foodapp.uitel.loadImage
 import com.google.firebase.database.DatabaseReference
@@ -68,8 +71,11 @@ class ViewFood : AppCompatActivity() {
 
 
 
+// get logged in user
 
-        var username="stan"
+        val refuser= userName(this)
+
+        var username=refuser.getUser()
         btn_order.setOnClickListener {
 
             progressdialog.show()
@@ -79,6 +85,7 @@ class ViewFood : AppCompatActivity() {
             ordercount++
             myPreference.setOrderCount(ordercount)
 
+
             var no= txt_counts.text.toString().toInt()
             var unitprice=foodPrice!!.toInt()
             var tprice=no*unitprice
@@ -87,23 +94,38 @@ class ViewFood : AppCompatActivity() {
             var items=txt_counts.text.toString()
             var left=foodCount!!.toInt() -no
             var the_key=ordercount.toString()
+            if (foodCount!!.toInt()>0) {
 
-            databaseReference=FirebaseDatabase.getInstance().getReference("orders")
-            val orders= MealOrder(username,foodimg, foodname,totalprice,items)
-            databaseReference.child(username).child(the_key).setValue(orders).addOnSuccessListener {
+                databaseReference = FirebaseDatabase.getInstance().getReference("orders")
+                val orders = MealOrder(the_key, username, foodimg, foodname, totalprice, items)
+                databaseReference.child(the_key).setValue(orders).addOnSuccessListener {
 
-                databaseReference1=FirebaseDatabase.getInstance().getReference("foodItem")
-                val left_Item= mapOf(
-                    "count" to left.toString()
-                )
-                databaseReference1.child(pstn.toString()).updateChildren(left_Item)
+                    databaseReference1 = FirebaseDatabase.getInstance().getReference("foodItem")
+                    val left_Item = mapOf(
+                        "count" to left.toString()
+                    )
+                    databaseReference1.child(pstn.toString()).updateChildren(left_Item)
+                    progressdialog.dismiss()
+
+
+                    val obj = SmsManager.getDefault()
+                    obj.sendTextMessage("+254740859674","I", "A new order has been placed, Check the system for further processing", null, null)
+
+                    Toast.makeText(this, "Order Placed Successfully", Toast.LENGTH_SHORT).show()
+
+
+
+                    startActivity(Intent(this, Orders::class.java))
+                    finish()
+                }.addOnFailureListener {
+                    progressdialog.dismiss()
+                    Toast.makeText(this, "Order Failed", Toast.LENGTH_SHORT).show()
+                    finish()
+                }
+            }else{
                 progressdialog.dismiss()
-                Toast.makeText(this, "Order Placed Successfully", Toast.LENGTH_SHORT).show()
-
-                startActivity(Intent(this, Orders::class.java))
-            }.addOnFailureListener {
-                progressdialog.dismiss()
-                Toast.makeText(this, "Order Failed", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Failed.  This Item is out of Stock!!", Toast.LENGTH_LONG).show()
+                finish()
             }
 
         }

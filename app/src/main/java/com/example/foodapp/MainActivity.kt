@@ -4,10 +4,11 @@ import android.app.ProgressDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.TextUtils
-import android.util.Patterns
 import android.widget.Toast
 import com.example.foodapp.databinding.ActivityMainBinding
+import com.example.foodapp.model.passUser
+import com.example.foodapp.model.userName
+//import com.example.foodapp.model.userName
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -55,14 +56,14 @@ class MainActivity : AppCompatActivity() {
          val firebaseuser= firebaseAuth.currentUser
          if (firebaseuser!=null){
              //user is already logged in
-             startActivity(Intent(this, Homepage::class.java))
+             startActivity(Intent(this, DashBoard::class.java))
              finish()
          }
     }
 
     private fun validateUser() {
 
-        progressdialog.show()
+
 
         //get the data
         email= binding.etEmail.text.toString().trim()
@@ -72,7 +73,7 @@ class MainActivity : AppCompatActivity() {
         }else if(password.isEmpty()){
             binding.etPassword.error=" This field cannot be empty"
         } else{
-
+            progressdialog.show()
 
 
         database= FirebaseDatabase.getInstance().getReference("register")
@@ -80,11 +81,26 @@ class MainActivity : AppCompatActivity() {
             if (it.exists()) {
                 //get data
                 val pass = it.child("pass").value
+                val username = it.child("username").value
+                val phone = it.child("phone").value
+                val email = it.child("email").value
+                val name = it.child("name").value
+                //val  = it.child("pass").value
                 //val idno = it.child("idno").value
                 if (pass == password) {
                     progressdialog.dismiss()
+                    val myPrefer = userName(this)
+
+                    myPrefer.setUser(username.toString())
+
+                    var usere=myPrefer.getUser()
+                    var a = passUser()
+                    a.getUser(usere)
                     Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show()
-                    startActivity(Intent(this, Homepage::class.java))
+                    var intent=Intent(this,DashBoard::class.java)
+                    //create object of userdetails class
+
+                    startActivity(intent)
                     finish()
                 } else {
                     progressdialog.dismiss()

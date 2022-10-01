@@ -92,7 +92,7 @@
         android:layout_width="396dp"
         android:layout_height="65dp"
         android:layout_marginTop="25dp"
-        android:background="@color/ic_cart_background"
+        android:background="@drawable/button"
         android:text="LOGIN"
 
         android:textColor="@color/black"

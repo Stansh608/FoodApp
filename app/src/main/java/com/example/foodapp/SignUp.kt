@@ -92,7 +92,7 @@ class SignUp : AppCompatActivity() {
                 // a popup msg on success
                 Toast.makeText(this, "Registration Successful", Toast.LENGTH_SHORT).show()
                 progressdialog.dismiss()
-                startActivity(Intent(this, Homepage::class.java))
+                startActivity(Intent(this, MainActivity::class.java))
                 finish()
                 // a popup msg on failure
             }.addOnFailureListener{

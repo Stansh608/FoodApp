@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item
+    android:id="@+id/ic_orders"
+    android:icon="@drawable/ic_order"
+    android:title="Orders"/>
+    <item
+        android:id="@+id/ic_processed"
+        android:icon="@drawable/ic_processed"
+        android:title="Processed"/>
+    <item
+        android:id="@+id/ic_Cancelled"
+        android:icon="@drawable/ic_cancelled"
+        android:title="Cancelled"/>
+</menu>
