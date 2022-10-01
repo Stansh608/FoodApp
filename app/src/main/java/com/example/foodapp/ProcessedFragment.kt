@@ -5,6 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.foodapp.foodordersfragadapter.foodOrdersFragmentAdapter
+import com.example.foodapp.foodordersfragadapter.processedfoodadapter
+import com.example.foodapp.foodordersfragmodel.foodordersViewModel
+import com.example.foodapp.foodordersfragmodel.processedfoodviewmodel
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -16,6 +24,10 @@ private const val ARG_PARAM2 = "param2"
  * Use the [ProcessedFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
+// other codes here
+private lateinit var viewModel: processedfoodviewmodel
+private lateinit var processedRecyclerView: RecyclerView
+lateinit var adapter1: processedfoodadapter
 class ProcessedFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
@@ -37,6 +49,8 @@ class ProcessedFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_processed, container, false)
     }
 
+
+
     companion object {
         /**
          * Use this factory method to create a new instance of
@@ -55,5 +69,21 @@ class ProcessedFragment : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        processedRecyclerView = view.findViewById(R.id.recyclerviewprocessed)
+        processedRecyclerView.layoutManager = LinearLayoutManager(context)
+        processedRecyclerView.setHasFixedSize(true)
+        adapter1= processedfoodadapter()
+        processedRecyclerView.adapter = adapter1
+
+        viewModel= ViewModelProvider(this).get(processedfoodviewmodel::class.java)
+
+        //update view
+        viewModel.allprocessed.observe(viewLifecycleOwner, Observer {
+
+            adapter1.updateprocessedList(it)
+        })
     }
 }

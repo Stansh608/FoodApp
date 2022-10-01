@@ -25,7 +25,7 @@ private const val ARG_PARAM2 = "param2"
 // other codes here
 private lateinit var viewModel: foodordersViewModel
 private lateinit var orderRecyclerView: RecyclerView
-lateinit var adapter: foodOrdersFragmentAdapter
+lateinit var adapter2: foodOrdersFragmentAdapter
 
 class OrdersFragment : Fragment() {
     // TODO: Rename and change types of parameters
@@ -73,15 +73,15 @@ class OrdersFragment : Fragment() {
         orderRecyclerView= view.findViewById(R.id.recyclervieworderFood)
         orderRecyclerView.layoutManager = LinearLayoutManager(context)
         orderRecyclerView.setHasFixedSize(true)
-        adapter= foodOrdersFragmentAdapter()
-        orderRecyclerView.adapter = adapter
+        adapter2= foodOrdersFragmentAdapter()
+        orderRecyclerView.adapter = adapter2
 
         viewModel= ViewModelProvider(this).get(foodordersViewModel::class.java)
 
         //update view
         viewModel.allmeals.observe(viewLifecycleOwner, Observer {
 
-            adapter.updateOrderList(it)
+            adapter2.updateOrderList(it)
         })
     }
 }
